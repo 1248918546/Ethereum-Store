@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ethereum Store</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="./app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<nav class="nav">
+		  <ul>
+		    <li><a href="#m_reg">商户注册</a></li>
+		    <li><a href="#m_login">商户登录</a></li>
+		    <li><a href="#c_reg">顾客注册</a></li>
+		    <li><a href="#c_login">顾客登陆</a></li>
+		  </ul>
+		</nav>
+		<br/>
+		<h1>基于以太坊的供应链系统</h1>
+		<div id="info">
+			<p id="status">状态显示栏</p>
+		</div>
+
+		<br/>
+		<br/>
+
+		<h2>商户端</h2>
+		<br/>
+		<br/>
+		<div class="smart-green">
+			<h1><a id="m_reg">商户注册</a></h1>
+			<br/>
+			<br/>
+			<label for="merchantAddress">用户地址</label><input type="text" id="merchantAddress">
+			<br/>
+			<br/>
+			<label for="merchantUsername">用户名</label><input type="text" id="merchantUsername">
+			<br/>
+			<br/>
+			<label for="merchantPwd">密码</label><input type="text" id="merchantPwd">
+			<br/>
+			<br/>
+			<br/>
+			<button id="registerMerchant" onclick="App.registerMerchant()">商户注册</button>
+		</div>
+
+		<br/>
+		<br/>
+		<div class="smart-green">
+			<h1><a id="m_login">商户登录</a></h1>
+			<br/>
+			<br/>
+			<label for="merchantLoginAddress">用户地址</label><input type="text" id="merchantLoginAddress">
+			<br/>
+			<br/>
+			<label for="merchantLoginPwd">密码</label><input type="text" id="merchantLoginPwd">
+			<br/>
+			<br/>
+			<br/>
+			<button id="merchantLogin" onclick="App.merchantLogin()">商户登录</button>
+		</div>
+		<br/>
+		<br/>
+
+		<h2>顾客端</h2>
+		<br/>
+		<br/>
+		<div class="smart-green">
+			<h1><a id="c_reg">顾客注册</a></h1>
+			<br/>
+			<br/>
+			<label for="customerAddress">用户地址</label><input type="text" id="customerAddress">
+			<br/>
+			<br/>
+			<label for="customerUsername">用户名</label><input type="text" id="customerUsername">
+			<br/>
+			<br/>
+			<label for="customerPwd">密码</label><input type="text" id="customerPwd">
+			<br/>
+			<br/>
+			<br/>
+			<button id="registerCustomer" onclick="App.registerCustomer()">顾客注册</button>
+		</div>
+		<br/>
+		<br/>
+
+		<div class="smart-green">
+			<h1><a id="c_login">顾客登录</a></h1>
+			<br/>
+			<br/>
+			<label for="customerLoginAddress">用户地址</label><input type="text" id="customerLoginAddress">
+			<br/>
+			<br/>
+			<label for="customerLoginPwd">密码</label><input type="text" id="customerLoginPwd">
+			<br/>
+			<br/>
+			<br/>
+			<button id="customerLogin" onclick="App.customerLogin()">顾客登录</button>
+		</div>
+	</div>
+</body>
+</html>

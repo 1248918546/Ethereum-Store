@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>顾客</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <script src="./app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      const getvalArr = document.URL.split('?')[1]
+      const keyValueArr = getvalArr.split('&')
+      const currentAccount = keyValueArr[0].split('=')[1]
+    </script>
+</head>
+<body>
+
+<div>
+	<nav class="nav">
+		<ul>
+		    <li><a href="#infom">账户信息</a></li>
+		    <li><a href="#buy">购买商品</a></li>
+		    <li><a href="#transfer">转让商品</a></li>
+		    <li><a href="#show1">商品流动过程</a></li>
+		    <li><a href="#show2">已购买商品</a></li>
+		    <li><a href="#show3">所有商品</a></li>
+		</ul>
+	</nav>
+	<h1>基于以太坊的供应链系统</h1>
+	<div id="info">
+		<p id="status">状态显示栏</p>
+	</div>
+
+	<br/>
+	<br/>
+	<h2>顾客端</h2>
+	<div class="smart-green">
+		<h1><a id="infom">账户信息</a></h1>
+		<br/>
+		<br/>
+		<label for="customerAddress">用户地址</label><input type="text" id="customerAddress">
+		<br/>
+		<br/>
+		<label for="customerUsername">用户名</label><input type="text" id="customerUsername">
+		<br/>
+		<br/>
+		<label for="customerBalance">账户余额</label><input type="text" id="customerBalance">
+		<br/>
+		<br/>
+		<br/>
+		<button id="showCustomerInfo" onclick="App.showCustomerInfo(currentAccount)">显示当前账户信息</button>
+	</div>
+
+	<br/>
+	<br/>
+
+	<div class="smart-green">
+		<h1><a id="buy">购买商品</a></h1>
+		<br/>
+		<br/>
+		<label for="goodID">商品ID</label><input type="text" id="goodID">
+		<br/>
+		<br/>
+		<button id="customerBuyGood" onclick="App.customerBuyGood(currentAccount)">购买商品</button>
+	</div>
+	<br/>
+	<br/>
+
+	<div class="smart-green">
+		<h1><a id="transfer">转让商品</a></h1>
+		<br/>
+		<br/>
+		<label for="sellgoodID">商品ID</label><input type="text" id="sellgoodID">
+		<br/>
+		<br/>
+		<label for="buyerAddress">转让到地址</label><input type="text" id="buyerAddress">
+		<br/>
+		<br>
+		<button id="customerTransferGood" onclick="App.customerTransferGood(currentAccount)">转让商品</button>
+	</div>
+	<br/>
+	<br/>
+
+	<div class="smart-green">
+		<h1><a id="show1">商品流通过程</a></h1>
+		<br/>
+		<br/>
+		<label for="searchgoodID">商品ID</label><input type="text" id="searchgoodID">
+		<br/>
+		<br/>
+		<button id="showGoodTransferProcess" onclick="App.showGoodTransferProcess(currentAccount)">查询商品流通过程</button>
+		<br/>
+		<br/>
+		<div id="postsRow">
+		<table class="reference" id="table_trans">
+			<!--显示商品流通过程-->
+		</table>
+		</div>
+	</div>
+
+	<br/>
+	<br/>
+	<div class="smart-green">
+		<h1><a id="show2">已购买商品</a></h1>
+		<br/>
+		<br/>
+		<button id="customerShowGood" onclick="App.customerShowGood(currentAccount)">查询已购买商品</button>
+		<br/>
+		<br/>
+		<div id="postsRow">
+		<table class="reference" id="table">
+			<!--显示商品列表-->
+		</table>
+		</div>
+	</div>
+
+	<br/>
+	<br/>
+	<div class="smart-green">
+		<h1><a id="show3">所有商品</a></h1>
+		<br/>
+		<br/>
+		<button id="showAllGoods" onclick="App.showAllGoods()">查询所有商品</button>
+		<br/>
+		<br/>
+		<div id="postsRow">
+		<table class="reference" id="table_all">
+			<!--显示商品列表-->
+		</table>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

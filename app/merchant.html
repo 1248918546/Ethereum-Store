@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商户</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <script src="./app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      const getvalArr = document.URL.split('?')[1]
+      const keyValueArr = getvalArr.split('&')
+      const currentAccount = keyValueArr[0].split('=')[1]
+    </script>
+</head>
+<body>
+
+<div>
+	<nav class="nav">
+		<ul>
+		    <li><a href="#infom">账户信息</a></li>
+		    <li><a href="#add">添加商品</a></li>
+		    <li><a href="#show">已添加商品</a></li>
+		</ul>
+		</nav>
+	<h1>基于以太坊的供应链系统</h1>
+	<div id="info">
+		<p id="status">状态显示栏</p>
+	</div>
+
+	<br/>
+	<br/>
+	<h2>商户端</h2>
+	<br/>
+	<br/>
+	<div class="smart-green">
+		<h1><a id="infom">账户信息</a></h1>
+		<br/>
+		<br/>
+		<label for="merchantAddress">用户地址</label><input type="text" id="merchantAddress">
+		<br/>
+		<br/>
+		<label for="merchantUsername">用户名</label><input type="text" id="merchantUsername">
+		<br/>
+		<br/>
+		<label for="merchantBalance">账户余额</label><input type="text" id="merchantBalance">
+		<br/>
+		<br/>
+		<br/>
+		<button id="showMerchantInfo" onclick="App.showMerchantInfo(currentAccount)">显示当前账户信息</button>
+	</div>
+
+	<br/>
+	<br/>
+	<div class="smart-green">
+		<h1><a id="add">添加商品</a></h1>
+		<br/>
+		<br/>
+		<label for="goodID">商品ID</label><input type="text" id="goodID">
+		<br/>
+		<br/>
+		<label for="goodName">商品名</label><input type="text" id="goodName">
+		<br/>
+		<br/>
+		<label for="goodPrice">商品价格</label><input type="text" id="goodPrice">
+		<br/>
+		<br/>
+		<br/>
+		<button id="merchantAddGood" onclick="App.merchantAddGood(currentAccount)">添加商品</button>
+	</div>
+
+	<br/>
+	<br/>
+	<div class="smart-green">
+		<h1><a id="show">已添加商品</a></h1>
+		<br/>
+		<br/>
+		<button id="merchantShowGood" onclick="App.merchantShowGood(currentAccount)">查询商品</button>
+		<br/>
+		<br/>
+		<div id="postsRow">
+		<table class="reference" id="table">
+			<!--显示商品列表-->
+		</table>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>
